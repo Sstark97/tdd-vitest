@@ -3,23 +3,20 @@ import { sum_ranges } from "../src/sum_ranges"
 
 describe("Testing sum_ranges", () => {
 
-    // it("ranges parameter must be a Matrix", () => {
-    //     expect(() => sum_ranges([],[])).toThrow()
-    // })
-
-    it("values must be an Array of numbers", () => {
-        expect(() => sum_ranges([],[[1,2,3]])).toThrow()
+    it("Values must be an array of numbers", () => {
+        expect(() => sum_ranges(1,[[1,2,3]])).toThrow()
     })
 
-    it("All elemenst in ranges son must be a number", () => {
-        expect(() => sum_ranges([1],[["dfdsf"]])).toThrow()
+    it("Ranges must be a Matrix", () => {
+        expect(() => sum_ranges([12],[2])).toThrow()
+    })
+    
+    it("All ranges in the Matrix must be numbers", () => {
+        expect(() => sum_ranges([12],[["hahaha"]])).toThrow()
     })
 
-    it("All ranges son must have 3 values", () => {
-        expect(() => sum_ranges([1],[[2]])).toThrow()
+    it("All ranges must have 3 numbers max", () => {
+        expect(() => sum_ranges([12],[[1],[1]])).toThrow()
     })
 
-    it("Range must be a Matrix", () => {
-        expect(() => sum_ranges([1],[])).toThrow()
-    })
 })
