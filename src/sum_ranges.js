@@ -14,4 +14,14 @@ export const sum_ranges = (values, ranges) => {
 
     if(ranges.some(range => range.length !== 3)) throw new Error("Ranges must have three values")
 
+    let result = 0
+
+    ranges.forEach((num, index) => {
+        if(index === 0 && values[num] !== undefined) {
+            result ++
+        }
+    })
+
+    return result
+
 }
