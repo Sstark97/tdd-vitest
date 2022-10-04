@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest"
-import { reverse_string, paintFrame } from "../src/reverse_string"
+import { reverse_string, paintFrame } from "../../src/daw/reverse_string"
 
 describe("Testing reverse_string", () => {
 

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest"
-import { sumRanges } from "../src/sum_ranges"
+import { sumRanges } from "../../src/daw/sum_ranges"
 
 describe("Control sumRanges Errors", () => {
 

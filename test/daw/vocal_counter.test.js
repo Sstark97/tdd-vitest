@@ -1,5 +1,5 @@
 import { describe, it, expect} from "vitest"
-import vocal_counter from "../src/vocal_counter"
+import vocal_counter from "../../src/daw/vocal_counter"
 
 describe("Vocal Counter Testing", () => {
     /*
