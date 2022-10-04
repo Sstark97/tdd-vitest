@@ -16,9 +16,15 @@ export const sum_ranges = (values, ranges) => {
 
     let result = 0
 
-    ranges.forEach((num, index) => {
-        if(index === 0 && values[num] !== undefined) {
-            result ++
+    ranges.forEach( range => {
+        const [start, end, value] = range
+
+        if (values[start] !== undefined) {
+            values[start] = value
+            
+            if(start === end) {
+                result += values[start]
+            } 
         }
     })
 
