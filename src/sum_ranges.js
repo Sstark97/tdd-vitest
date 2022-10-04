@@ -6,7 +6,7 @@
 */
 
 const controlSumErrors = (values, ranges) => {
-    if(!Array.isArray(values) && values.some(value => typeof value !== "number")) throw new Error("The parameters must be an Array")
+    if(!Array.isArray(values) || values.some(value => typeof value !== "number")) throw new Error("The parameters must be an Array")
 
     if(values.length < 5) throw new Error("Values must have 5 elements")
 

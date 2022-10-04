@@ -12,15 +12,15 @@ describe("Control sumRanges Errors", () => {
     })
 
     it("Ranges must be a Matrix", () => {
-        expect(() => sumRanges([12],[2])).toThrow()
+        expect(() => sumRanges([12,3,4,5,6],[2])).toThrow()
     })
     
     it("All ranges in the Matrix must be numbers", () => {
-        expect(() => sumRanges([12],[["hahaha"]])).toThrow()
+        expect(() => sumRanges([12,2,3,4,5],[["hahaha"]])).toThrow()
     })
 
     it("All ranges must have 3 numbers max", () => {
-        expect(() => sumRanges([12],[[1],[1]])).toThrow()
+        expect(() => sumRanges([12,4,5,6,7],[[1],[1]])).toThrow()
     })
 
 })
