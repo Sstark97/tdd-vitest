@@ -5,29 +5,34 @@
         [1, -2, 3, 4, -5, -4, 3, 2, 1 ] --- [[1, 4, 6], [2,5,4]] --- resultado: 8 
 */
 
-export const sum_ranges = (values, ranges) => {
+const controlSumErrors = (values, ranges) => {
     if(!Array.isArray(values) && values.some(value => typeof value !== "number")) throw new Error("The parameters must be an Array")
+
+    if(values.length < 5) throw new Error("Values must have 5 elements")
 
     if(!Array.isArray(ranges) ||  ranges.some(range => !Array.isArray(range))) throw new Error("The parameters must be an Array")
 
     if(ranges.some(range => range.some(number => typeof number !== "number"))) throw new Error("Ranges must be a Matrix of numbers")
 
     if(ranges.some(range => range.length !== 3)) throw new Error("Ranges must have three values")
+}
 
-    let result = 0
+export const sumRanges = (values, ranges) => {
+    // Comprobe Errors in Function
+    controlSumErrors(values,ranges)
+
+    const sumArray = []
 
     ranges.forEach( range => {
         const [start, end, value] = range
 
-        if (values[start] !== undefined) {
-            values[start] = value
+        values[start] = value
             
-            if(start === end) {
-                result += values[start]
-            } 
-        }
+        const subValues = values.slice(start, end + 1)
+        const result = subValues.reduce((acc,elem) => acc + elem,0)
+        sumArray.push(result)
     })
 
-    return result
+    return sumArray.sort((a, b) => a + b)[0]
 
 }
